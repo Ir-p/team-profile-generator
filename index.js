@@ -16,13 +16,33 @@ async function init () {
     
     const managerObj = new Manager(...Object.values(managerAnswers))
         // render new manager based on object props
-    const cardString = renderEmployee(managerObj)
+    const cardString = generateEmployeeString(managerObj)
         // push to htmlCard Array
     htmlTeamArray.push(cardString)
         // back to mainMenu
     mainMenu()
 }
-    // generate Intern
+async function mainMenu () {
+// mainMenu questions
+console.log("mainMenu")
+console.log(htmlTeamArray)
+        //generate Engineer
+        // generate Intern
+        // bye
+    
+
+}
+
+function generateEmployeeString(employeeObj){
+    return `
+    <div>
+        <h2>${employeeObj.name}</h2>
+
+        <p>Role: ${employeeObj.getRole()}</p>
+    </div>
+    `
+}
+// generate Intern
         // ask questions
         // render new manager based on object props
         // push to htmlCard Array
@@ -34,10 +54,6 @@ async function init () {
         // push to htmlCard Array
         // back to mainMenu
 
-    // mainMenu questions
-        //generate Engineer
-        // generate Intern
-        // bye
     
     // build htmlString
 
