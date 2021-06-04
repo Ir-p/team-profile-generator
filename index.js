@@ -1,20 +1,27 @@
 const fs = require('fs');
 const path = require('path');
-const inquirer = require('inquirer')
+const {prompt: promptUser} = require('inquirer')
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
+const questions = require('./src/questions.js')
 
+const htmlTeamArray = []
 
-async function main () {
-    // htmlCardArray [];
+async function init () {
 
     // generate Manager
         // ask questions
+    const managerAnswers = await promptUser(questions.managerQuestions)
+    
+    const managerObj = new Manager(...Object.values(managerAnswers))
         // render new manager based on object props
+    const cardString = renderEmployee(managerObj)
         // push to htmlCard Array
+    htmlTeamArray.push(cardString)
         // back to mainMenu
-
+    mainMenu()
+}
     // generate Intern
         // ask questions
         // render new manager based on object props
@@ -26,11 +33,33 @@ async function main () {
         // render new manager based on object props
         // push to htmlCard Array
         // back to mainMenu
-        
+
     // mainMenu questions
         //generate Engineer
         // generate Intern
         // bye
+    
+    // build htmlString
+
+    function buildHtmlString(htmlCardArray){
+        `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+          <title>Document</title>
+        </head>
+        <body>
+          <main class="container">
+            ${htmlCardArray.join("")}
+          </main>
+        </div>
+        </body>
+        </html>`
+    }
+
+    // save string to index.html
 
     //create a manager
         // ask 
@@ -41,11 +70,13 @@ async function main () {
             // engineer
             // done
     //
-}
+
 
 // 🚀 start
 
-main();
+init();
+
+
 // Question objects contain questions for prompts
 
 
