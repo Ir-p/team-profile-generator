@@ -25,46 +25,46 @@ module.exports = {
   internQuestions: [
     {
       type: "input",
-      name: "nameIntern",
-      message: "Please enter your Intern name.",
+      name: "name",
+      message: "Please enter your name.",
     },
     {
       type: "input",
-      name: "idIntern",
-      message: "Please enter your Intern ID.",
+      name: "id",
+      message: "Please enter your ID.",
     },
     {
       type: "input",
-      name: "emailIntern",
-      message: "Please enter your Intern email.",
+      name: "email",
+      message: "Please enter your email.",
     },
     {
       type: "input",
-      name: "schoolIntern ",
-      message: "Please enter your Intern school.",
+      name: "school",
+      message: "Please enter your school.",
     },
   ],
 
   engineerQuestions: [
     {
       type: "input",
-      name: "nameEngineer",
-      message: "Please enter your Engineer name.",
+      name: "name",
+      message: "Please enter your name.",
     },
     {
       type: "input",
-      name: "idEngineer",
-      message: "Please enter your Engineer ID.",
+      name: "id",
+      message: "Please enter your ID.",
     },
     {
       type: "input",
-      name: "emailEngineer",
-      message: "Please enter your Engineer email.",
+      name: "email",
+      message: "Please enter your email.",
     },
     {
       type: "input",
-      name: "githubEngineer",
-      message: "Please enter your Engineer github.",
+      name: "github",
+      message: "Please enter your GitHub URL.",
     },
   ],
 
