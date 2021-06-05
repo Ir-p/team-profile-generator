@@ -32,7 +32,7 @@ async function mainMenu () {
         // generate Intern
         case "Add another Engineer": return promptEngineer()
         // bye
-        default: return;
+        default: return buildHtmlString(htmlTeamArray);
     }
 }
 
@@ -61,7 +61,7 @@ function generateEmployeeString(employeeObj){
     // build htmlString
 
     function buildHtmlString(htmlCardArray){
-        `<!DOCTYPE html>
+    const htmlString = `<!DOCTYPE html>
         <html lang="en">
         <head>
           <meta charset="UTF-8">
@@ -76,8 +76,14 @@ function generateEmployeeString(employeeObj){
         </div>
         </body>
         </html>`
+
+        // Save, and then, process
+        saveHtml(htmlString)
     }
 
+    function saveHtml(str) {
+        console.log(str)
+    }
     // save string to index.html
 
     //create a manager
