@@ -53,7 +53,7 @@ async function promptIntern() {
   const internAnswers = await promptUser(questions.internQuestions);
   const internParams = Object.values(internAnswers);
   const internObj = new Intern (...internParams);
-  const cardString = generateInternString(internObj);
+  const cardString = generateEmployeeString(internObj);
   htmlTeamArray.push(cardString);
   mainMenu();
 }
