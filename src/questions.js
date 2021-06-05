@@ -1,5 +1,5 @@
 module.exports = {
-managerQuestions: [
+  managerQuestions: [
     {
       type: "input",
       name: "nameManager",
@@ -19,10 +19,10 @@ managerQuestions: [
       type: "input",
       name: "officeNumberManager",
       message: "Please enter your Manager office number.",
-    }
+    },
   ],
 
-    internQuestions: [
+  internQuestions: [
     {
       type: "input",
       name: "nameIntern",
@@ -42,7 +42,7 @@ managerQuestions: [
       type: "input",
       name: "schoolIntern ",
       message: "Please enter your Intern school.",
-    }
+    },
   ],
 
   engineerQuestions: [
@@ -65,8 +65,15 @@ managerQuestions: [
       type: "input",
       name: "githubEngineer",
       message: "Please enter your Engineer github.",
-    }
+    },
+  ],
+
+  mainMenuQuestions: [
+    {
+      type: "list",
+      name: "nextMove",
+      message: "What would you like to do next",
+      choices:["Add another Intern", "Add another engineer", "All done"]
+    },
   ]
-
-
-}
+};

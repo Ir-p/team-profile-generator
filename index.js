@@ -24,13 +24,16 @@ async function init () {
 }
 async function mainMenu () {
 // mainMenu questions
-console.log("mainMenu")
-console.log(htmlTeamArray)
+    const nextMove = await promptUser(questions.mainMenuQuestions)
+    console.log(nextMove)
+    switch (nextMove) {
         //generate Engineer
+        case "Add another Intern": return promptIntern()
         // generate Intern
+        case "Add another Engineer": return promptEngineer()
         // bye
-    
-
+        default: return;
+    }
 }
 
 function generateEmployeeString(employeeObj){
@@ -91,6 +94,12 @@ function generateEmployeeString(employeeObj){
 // 🚀 start
 
 init();
+
+
+
+
+
+// Tutoring session
 
 
 // Question objects contain questions for prompts
