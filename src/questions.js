@@ -64,7 +64,7 @@ module.exports = {
     {
       type: "input",
       name: "github",
-      message: "Please enter your GitHub URL.",
+      message: "Please enter your GitHub username.",
     },
   ],
 

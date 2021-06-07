@@ -85,7 +85,7 @@ function generateEngineerString(engineer) {
           <ul>
             <li>ID: ${engineer.getId()}</li>
             <li>Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-            <li>Github Link:<a href="${engineer.github}">${engineer.github}</a></li>
+            <li>Github Link:<a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
           </ul>
     </section>
     `;
