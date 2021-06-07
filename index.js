@@ -114,7 +114,7 @@ function buildHtmlString(cardArray) {
           <meta charset="UTF-8">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-          <link rel="stylesheet" type="text/css" href="src/css/style.css"/>
+          <link rel="stylesheet" type="text/css" href="dist/css/style.css"/>
           <title>Document</title>
         </head>
         <body>
