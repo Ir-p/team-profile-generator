@@ -11,7 +11,7 @@ amodule.exports = {
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${manager.getID()}</li>
-            <li class="list-group-item">Email: <a href="mailto:$${manager.getEmai()}>${manager.getEmail()}</a></li>
+            <li class="list-group-item">Email: <a href="mailto:${manager.getEmai()}</a></li>
             <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
         </ul>
     </div>

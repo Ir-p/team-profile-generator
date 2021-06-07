@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "inquirer": "^8.1.0"
+    "file-saver": "^2.0.5",
+    "inquirer": "^8.1.0",
+    "open": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -23,7 +23,7 @@ async function init() {
 }
 async function mainMenu() {
   // mainMenu questions
-  const {nextMove} = await promptUser(questions.mainMenuQuestions);
+  const { nextMove } = await promptUser(questions.mainMenuQuestions);
   console.log(nextMove);
   switch (nextMove.toLowerCase()) {
     //generate Engineer
@@ -32,14 +32,14 @@ async function mainMenu() {
     // generate Intern
     case "add another engineer":
       return promptEngineer();
-    // bye
+    // default
     default:
       return buildHtmlString(htmlTeamArray);
   }
 }
 
 async function promptEngineer() {
-    console.log("promptEngineer")
+  console.log("promptEngineer");
   const engineerAnswers = await promptUser(questions.engineerQuestions);
   const engineerParams = Object.values(engineerAnswers);
   const engineerObj = new Engineer(...engineerParams);
@@ -48,11 +48,12 @@ async function promptEngineer() {
   mainMenu();
 }
 
+// push to htmlCard Array
 async function promptIntern() {
-    console.log("promptIntern")
+  console.log("promptIntern");
   const internAnswers = await promptUser(questions.internQuestions);
   const internParams = Object.values(internAnswers);
-  const internObj = new Intern (...internParams);
+  const internObj = new Intern(...internParams);
   const cardString = generateEmployeeString(internObj);
   htmlTeamArray.push(cardString);
   mainMenu();
@@ -60,28 +61,23 @@ async function promptIntern() {
 
 function generateEmployeeString(employeeObj) {
   return `
-    <div>
-        <h2>${employeeObj.name}</h2>
-
-        <p>Role: ${employeeObj.getRole()}</p>
+    <div class="card" style = "width: 15rem">
+      <div>
+        <h2 style = "background-color: yellowgreen">${employeeObj.name}</h2>
+          <h3 style = "background-color: yellowgreen">Role: ${employeeObj.getRole()}</h3>
+      </div>
+          <ul>
+            <li>ID: ${employeeObj.getId()}</li>
+            <li>Email:<a href="mailto:${employeeObj.getEmail()}">${employeeObj.getEmail()}</a></li>
+            <li>Office Number: ${employeeObj.officeNumber}</li>
+          </ul>
     </div>
     `;
 }
-// generate Intern
-// ask questions
-// render new manager based on object props
-// push to htmlCard Array
-// back to mainMenu
-
-// generate Engineer
-// ask questions
-// render new manager based on object props
-// push to htmlCard Array
-// back to mainMenu
 
 // build htmlString
 
-function buildHtmlString(htmlCardArray) {
+function buildHtmlString(cardArray) {
   const htmlString = `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -92,7 +88,7 @@ function buildHtmlString(htmlCardArray) {
         </head>
         <body>
           <main class="container">
-            ${htmlCardArray.join("")}
+            ${cardArray.join("")}
           </main>
         </div>
         </body>
@@ -102,36 +98,13 @@ function buildHtmlString(htmlCardArray) {
   saveHtml(htmlString);
 }
 
-function saveHtml(str) {
-  console.log(str);
-}
 // save string to index.html
-
-//create a manager
-// ask
-// generate html string from answers, and push to complete team
-//ask for
-// switch
-// intern
-// engineer
-// done
-//
+function saveHtml(str){
+  const htmlPageContent = str
+  fs.writeFile('index.html', htmlPageContent, (e) =>
+  e ? console.log(e) : open ("index.html"))
+}
 
 // 🚀 start
 
 init();
-
-// Tutoring session
-
-// Question objects contain questions for prompts
-
-// Add manger function
-
-//switch case function
-// who to add? Intern? Engineer? Done?
-
-// Add Intern function
-
-// Add Engineer function
-
-// Build html function

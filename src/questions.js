@@ -2,22 +2,22 @@ module.exports = {
   managerQuestions: [
     {
       type: "input",
-      name: "nameManager",
+      name: "name",
       message: "Please enter your Manager name.",
     },
     {
       type: "input",
-      name: "idManager",
+      name: "id",
       message: "Please enter your Manager ID.",
     },
     {
       type: "input",
-      name: "emailManager",
+      name: "email",
       message: "Please enter your Manager email.",
     },
     {
       type: "input",
-      name: "officeNumberManager",
+      name: "officeNumber",
       message: "Please enter your Manager office number.",
     },
   ],
