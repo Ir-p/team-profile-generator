@@ -5,6 +5,7 @@ const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const Manager = require("./lib/Manager.js");
 const questions = require("./src/questions.js");
+const open = require("open");
 
 const htmlTeamArray = [];
 
@@ -13,9 +14,9 @@ async function init() {
   // ask questions
   const managerAnswers = await promptUser(questions.managerQuestions);
   const managerParams = Object.values(managerAnswers);
-  const managerObj = new Manager(...managerParams);
+  const managerObject = new Manager(...managerParams);
   // render new manager based on object props
-  const cardString = generateEmployeeString(managerObj);
+  const cardString = generateManagerString(managerObject);
   // push to htmlCard Array
   htmlTeamArray.push(cardString);
   // back to mainMenu
@@ -38,45 +39,74 @@ async function mainMenu() {
   }
 }
 
+// push to Engineer htmlCard Array
 async function promptEngineer() {
   console.log("promptEngineer");
   const engineerAnswers = await promptUser(questions.engineerQuestions);
   const engineerParams = Object.values(engineerAnswers);
   const engineerObj = new Engineer(...engineerParams);
-  const cardString = generateEmployeeString(engineerObj);
+  const cardString = generateEngineerString(engineerObj);
   htmlTeamArray.push(cardString);
   mainMenu();
 }
 
-// push to htmlCard Array
+// push to Intern htmlCard Array
 async function promptIntern() {
   console.log("promptIntern");
   const internAnswers = await promptUser(questions.internQuestions);
   const internParams = Object.values(internAnswers);
   const internObj = new Intern(...internParams);
-  const cardString = generateEmployeeString(internObj);
+  const cardString = generateInternString(internObj);
   htmlTeamArray.push(cardString);
   mainMenu();
 }
 
-function generateEmployeeString(employeeObj) {
+// create html section for Manager answers
+function generateManagerString(manager) {
   return `
-    <div class="card" style = "width: 15rem">
-      <div>
-        <h2 style = "background-color: yellowgreen">${employeeObj.name}</h2>
-          <h3 style = "background-color: yellowgreen">Role: ${employeeObj.getRole()}</h3>
-      </div>
-          <ul>
-            <li>ID: ${employeeObj.getId()}</li>
-            <li>Email:<a href="mailto:${employeeObj.getEmail()}">${employeeObj.getEmail()}</a></li>
-            <li>Office Number: ${employeeObj.officeNumber}</li>
-          </ul>
-    </div>
+    <section class="card" style = "width: 17rem">
+      <h2>${manager.name}</h2>
+        <h3>Role: ${manager.getRole()}</h3>
+        <ul>
+          <li>ID: ${manager.getId()}</li>
+          <li>Email:<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+          <li>Office Number: ${manager.officeNumber}</li>
+        </ul>
+    </section>
     `;
-}
+};
+
+// create html section for Engineer answers
+function generateEngineerString(engineer) {
+  return `
+    <section class="card" style = "width: 17rem">
+      <h2>${engineer.name}</h2>
+        <h3>Role: ${engineer.getRole()}</h3>
+          <ul>
+            <li>ID: ${engineer.getId()}</li>
+            <li>Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+            <li>Github Link:<a href="${engineer.github}">${engineer.github}</a></li>
+          </ul>
+    </section>
+    `;
+};
+
+// create html section for Intern answers
+function generateInternString(intern) {
+  return `
+    <section class="card" style = "width: 17rem">
+      <h2>${intern.name}</h2>
+        <h3>Role: ${intern.getRole()}</h3>
+          <ul>
+            <li>ID: ${intern.getId()}</li>
+            <li>Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+            <li>School: ${intern.school}</li>
+          </ul>
+    </section>
+    `;
+};
 
 // build htmlString
-
 function buildHtmlString(cardArray) {
   const htmlString = `<!DOCTYPE html>
         <html lang="en">
@@ -84,27 +114,29 @@ function buildHtmlString(cardArray) {
           <meta charset="UTF-8">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+          <link rel="stylesheet" type="text/css" href="src/css/style.css"/>
           <title>Document</title>
         </head>
         <body>
           <main class="container">
-            ${cardArray.join("")}
+            <h1>My Team</h1>
+              <section class="flex-row">
+                ${cardArray.join("")}
+              </section>
           </main>
-        </div>
         </body>
         </html>`;
 
-  // Save, and then, process
-  saveHtml(htmlString);
+  // render index.html
+  renderHtml(htmlString);
 }
 
-// save string to index.html
-function saveHtml(str){
+// render string to index.html
+function renderHtml(str){
   const htmlPageContent = str
   fs.writeFile('index.html', htmlPageContent, (e) =>
   e ? console.log(e) : open ("index.html"))
 }
 
 // 🚀 start
-
 init();
