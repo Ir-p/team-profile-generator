@@ -7,7 +7,7 @@ describe('Engineer Class Test', () => {
     test('Engineer Initialization', () => {
 
         // arange, act
-        const engineerObj = new Egnieer();
+        const engineerObj = new Engineer();
 
         // assert
         expect(engineerObj instanceof Engineer).toBe(true)
