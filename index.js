@@ -66,7 +66,7 @@ function generateManagerString(manager) {
   return `
     <section class="card" style = "width: 17rem">
       <h2>${manager.name}</h2>
-        <h3>Role: ${manager.getRole()}</h3>
+        <h3>${manager.getRole()}</h3>
         <ul>
           <li>ID: ${manager.getId()}</li>
           <li>Email:<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
@@ -81,7 +81,7 @@ function generateEngineerString(engineer) {
   return `
     <section class="card" style = "width: 17rem">
       <h2>${engineer.name}</h2>
-        <h3>Role: ${engineer.getRole()}</h3>
+        <h3>${engineer.getRole()}</h3>
           <ul>
             <li>ID: ${engineer.getId()}</li>
             <li>Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
@@ -96,7 +96,7 @@ function generateInternString(intern) {
   return `
     <section class="card" style = "width: 17rem">
       <h2>${intern.name}</h2>
-        <h3>Role: ${intern.getRole()}</h3>
+        <h3>${intern.getRole()}</h3>
           <ul>
             <li>ID: ${intern.getId()}</li>
             <li>Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
@@ -114,7 +114,7 @@ function buildHtmlString(cardArray) {
           <meta charset="UTF-8">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-          <link rel="stylesheet" type="text/css" href="dist/css/style.css"/>
+          <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
           <title>Document</title>
         </head>
         <body>

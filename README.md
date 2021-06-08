@@ -7,7 +7,7 @@ This app is a Node.js command-line application that takes in information about e
 * clone me, or fork me
 * 🌎 live at: [github pages] (https://ir-p.github.io/team-profile-generator/)
 
-* Screen shot of the deployed app: ![Screen Shot Of The Deployed App](dist/images/screenshot.jpg)
+* Screen shot of the deployed app: ![Screen Shot Of The Deployed App](assets/images/screenshot.jpg)
 
 * [Watch the video]()
 ## Deployment
