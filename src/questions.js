@@ -8,17 +8,17 @@ module.exports = {
     {
       type: "input",
       name: "id",
-      message: "Please enter your Manager ID.",
+      message: "Please enter your Manager's ID.",
     },
     {
       type: "input",
       name: "email",
-      message: "Please enter your Manager email.",
+      message: "Please enter your Manager's email.",
     },
     {
       type: "input",
       name: "officeNumber",
-      message: "Please enter your Manager office number.",
+      message: "Please enter your Manager's office number.",
     },
   ],
 
@@ -26,22 +26,22 @@ module.exports = {
     {
       type: "input",
       name: "name",
-      message: "Please enter your name.",
+      message: "Please enter Intern name.",
     },
     {
       type: "input",
       name: "id",
-      message: "Please enter your ID.",
+      message: "Please enter Intern's ID.",
     },
     {
       type: "input",
       name: "email",
-      message: "Please enter your email.",
+      message: "Please enter Intern's email.",
     },
     {
       type: "input",
       name: "school",
-      message: "Please enter your school.",
+      message: "Please enter Intern's school.",
     },
   ],
 
@@ -49,22 +49,22 @@ module.exports = {
     {
       type: "input",
       name: "name",
-      message: "Please enter your name.",
+      message: "Please enter Engineer name.",
     },
     {
       type: "input",
       name: "id",
-      message: "Please enter your ID.",
+      message: "Please enter Engineer's ID.",
     },
     {
       type: "input",
       name: "email",
-      message: "Please enter your email.",
+      message: "Please enter Engineer's email.",
     },
     {
       type: "input",
       name: "github",
-      message: "Please enter your GitHub username.",
+      message: "Please enter Engineer's GitHub username.",
     },
   ],
 
