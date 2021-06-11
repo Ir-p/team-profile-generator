@@ -28,5 +28,5 @@ describe('Intern Class Test', () => {
 
         })
     })
-    // test failures, undefined, errors
+
 })

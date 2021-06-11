@@ -28,5 +28,5 @@ describe('Manager Class Test', () => {
 
         })
     })
-    // test failures, undefined, errors
+
 })
