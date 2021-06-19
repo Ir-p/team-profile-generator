@@ -6,11 +6,16 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "inquirer": "^8.1.0",
+    "jest": "^27.0.4",
     "open": "^8.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-test": "^1.4.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+		"watch": "nodemon index",
+		"test": "jest"
   },
   "repository": {
     "type": "git",
