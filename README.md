@@ -9,7 +9,7 @@ This app is a Node.js command-line application that takes in information about e
 
 * Screen shot of the deployed app: ![Screen Shot Of The Deployed App](assets/images/screenshot.jpg)
 
-* [Watch the video](https://drive.google.com/file/d/1y5hO-CFNWCbHG7_mwkyrn6ikwW_Cdm1A/view?usp=sharing)
+* [Watch the video](https://drive.google.com/file/d/1Y5Y64IXdKxhMw6Mz0qdqahVzQUMWAQW2/view?usp=sharing)
 ## Deployment
 * just deploy, no other actions needed
 
